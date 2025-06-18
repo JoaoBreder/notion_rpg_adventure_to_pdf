@@ -1,0 +1,100 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+
+@include mat.core();
+
+// -----------------------------------------------------------------------------------------------------
+// @ Custom palettes
+// -----------------------------------------------------------------------------------------------------
+
+$black-palette: (
+    50: #ffffff,
+    100: #c7c7c7,
+    200: #bababa,
+    300: #7a7a7a,
+    400: #3b3b3b,
+    500: #333333,
+    600: #2e2e2e,
+    700: #1a1a1a,
+    800: #0f0f0f,
+    900: black,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: rgba(black, 0.87),
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+    ),
+);
+
+$white-palette: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    contrast: (
+        50: rgba(black, 0.87),
+        100: rgba(black, 0.87),
+        200: rgba(black, 0.87),
+        300: rgba(black, 0.87),
+        400: #ffffff,
+        500: #ffffff,
+        600: #ffffff,
+        700: #ffffff,
+        800: #ffffff,
+        900: #ffffff,
+    ),
+);
+
+// -----------------------------------------------------------------------------------------------------
+// @ Typography
+// -----------------------------------------------------------------------------------------------------
+
+$typography: mat.define-typography-config(
+    $font-family: 'Roboto',
+    $headline-6: mat.define-typography-level(20px, 32px, 600),
+    $body-2: mat.define-typography-level(14px, 24px, 600),
+    $button: mat.define-typography-level(14px, 14px, 600),
+    $body-1: mat.define-typography-level(16px, 1.125, 400),
+);
+
+@include mat.all-component-typographies($typography);
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define the default theme
+// -----------------------------------------------------------------------------------------------------
+
+$default-primary-palette: mat.define-palette(mat.$black-palette 500);
+$default-accent-palette: mat.define-palette($white-palette, 600);
+$default-warn-palette: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $default-primary-palette,
+            accent: $default-accent-palette,
+            warn: $default-warn-palette,
+        ),
+    )
+);
+
+@include mat.all-component-themes($theme);
+
+body.theme-default {
+    $palettes: (
+        primary: $default-primary-palette,
+        accent: $default-accent-palette,
+        warn: $default-warn-palette,
+    );
+}

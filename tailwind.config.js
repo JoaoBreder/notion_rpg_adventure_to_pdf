@@ -4,18 +4,18 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'white-color': {
-                    25: '#FFFFFF',
-                    50: '#FFFFFF',
-                    100: '#FFFFFF',
-                    200: '#FFFFFF',
-                    300: '#FFFFFF',
-                    400: '#FFFFFF',
-                    500: '#FFFFFF',
-                    600: '#FFFFFF',
-                    700: '#FFFFFF',
-                    800: '#FFFFFF',
-                    900: '#FFFFFF',
+                'website-background-color': '#191919',
+                'black-palette': {
+                    50: '#ffffff',
+                    100: '#C7C7C7',
+                    200: '#BABABA',
+                    300: '#7A7A7A',
+                    400: '#3B3B3B',
+                    500: '#333333',
+                    600: '#2e2e2e',
+                    700: '#1a1a1a',
+                    800: '#0F0F0F',
+                    900: 'black',
                 },
             },
         },
