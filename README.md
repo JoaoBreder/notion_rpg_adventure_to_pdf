@@ -1,59 +1,27 @@
 # NotionRpgAdventureToPdf
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+Conversor de aventura de RPG feito no Notion para PDF.
 
-## Development server
+Esse projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.0.4.
 
-To start a local development server, run:
+## Rodando o projeto
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Antes de rodar o projeto localmente, é preciso instalar todos os seus packages, a partir do seguinte comando:
 
 ```bash
-ng generate component component-name
+npm i
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Para iniciar o projeto localmente, rode:
 
 ```bash
-ng generate --help
+npm start
 ```
 
-## Building
+Assim que o servidor estiver em execução, abra seu navegador e vá para `http://localhost:4200/`. O aplicativo será recarregado automaticamente sempre que você modificar qualquer um dos arquivos de origem.
 
-To build the project run:
+## Convertendo sua aventura para PDF
 
-```bash
-ng build
-```
+Abra o arquivo da aventura no Notion e exporte como HTML.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+No site você irá escrever algumas informações em relação a aventura, para que sejam adicionadas ao arquivo PDF. Por fim, basta adicionar o arquivo HTML da aventura que deseja converter e clicar em `Gerar Arquivo da Aventura`.
