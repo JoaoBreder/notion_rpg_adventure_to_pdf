@@ -1,0 +1,80 @@
+// https://github.com/angular-eslint/angular-eslint#notes-for-eslint-plugin-prettier-users
+{
+    "root": true,
+    "ignorePatterns": ["projects/**/*"],
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "parserOptions": {
+                "ecmaVersion": 2017
+            }
+        },
+        {
+            "files": ["*.ts"],
+            "parserOptions": {
+                "project": ["tsconfig.json"],
+                "createDefaultProgram": true
+            },
+            "extends": [
+                "plugin:@angular-eslint/ng-cli-compat",
+                "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+                "plugin:@angular-eslint/template/process-inline-templates",
+                "plugin:prettier/recommended"
+            ],
+            "rules": {
+                "jsdoc/newline-after-description": "off",
+                "@angular-eslint/component-selector": [
+                    "error",
+                    {
+                        "prefix": ["app", ""]
+                    }
+                ],
+                "@angular-eslint/directive-selector": [
+                    "error",
+                    {
+                        "prefix": ["app", ""]
+                    }
+                ],
+                "@typescript-eslint/naming-convention": [
+                    "warn",
+                    {
+                        "selector": "variable",
+                        "format": ["camelCase", "snake_case", "UPPER_CASE", "PascalCase"]
+                    }
+                ],
+                "@typescript-eslint/member-ordering": ["off", { "default": [] }],
+                "@typescript-eslint/consistent-type-definitions": "error",
+                "@typescript-eslint/dot-notation": "off",
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "off",
+                    {
+                        "accessibility": "explicit"
+                    }
+                ],
+                "brace-style": ["off", "off"],
+                "id-blacklist": "off",
+                "id-match": "off",
+                "no-trailing-spaces": "off",
+                "no-underscore-dangle": "off",
+                "valid-typeof": "error",
+                "prefer-arrow/prefer-arrow-functions": "off"
+            }
+        },
+        // NOTE: WE ARE NOT APPLYING PRETTIER IN THIS OVERRIDE, ONLY @ANGULAR-ESLINT/TEMPLATE
+        {
+            "files": ["*.{html,scss,css,json}"],
+            "extends": ["plugin:@angular-eslint/template/recommended"],
+            "rules": {}
+        },
+        // NOTE: WE ARE NOT APPLYING @ANGULAR-ESLINT/TEMPLATE IN THIS OVERRIDE, ONLY PRETTIER
+        {
+            "files": ["*.html"],
+            "excludedFiles": ["*inline-template-*.component.html"],
+            "extends": ["plugin:prettier/recommended"],
+            "rules": {
+                // NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
+                "prettier/prettier": ["error", { "parser": "angular" }]
+            }
+        }
+    ]
+}
