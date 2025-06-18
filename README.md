@@ -2,7 +2,7 @@
 
 Conversor de aventura de RPG feito no Notion para PDF.
 
-Esse projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.0.4.
+Esse projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 16.2.6.
 
 ## Rodando o projeto
 
